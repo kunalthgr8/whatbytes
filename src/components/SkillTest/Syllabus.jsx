@@ -7,11 +7,11 @@ const SyllabusAnalysis = () => {
     ];
   
     return (
-      <div className="bg-white rounded-lg shadow p-4 mb-6">
-        <h3 className="font-bold mb-4">Syllabus Wise Analysis</h3>
+      <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-6">
+        <h3 className="text-xl font-bold mb-4">Syllabus Wise Analysis</h3>
         {topics.map((topic, index) => (
           <div key={index} className="mb-4">
-            <p>{topic.name}</p>
+            <p className="p-2 pl-0">{topic.name}</p>
             <div className="relative h-2 bg-gray-200 rounded-full">
               <div
                 style={{ width: `${topic.score}%` }}

@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
-import SkillTestHeader from './SkillTestHandler';
-import QuickStatistics from './QuickStats';
-import ComparisonGraph from './Graph';
-import SyllabusAnalysis from './Syllabus';
-import QuestionAnalysis from './QuestionAna';
+import React, { useState } from "react";
+import SkillTestHeader from "./SkillTestHandler";
+import QuickStatistics from "./QuickStats";
+import ComparisonGraph from "./Graph";
+import SyllabusAnalysis from "./Syllabus";
+import QuestionAnalysis from "./QuestionAna";
 
 function SkillTest() {
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full">
-      <div className="flex-1 ml-64 p-6">
-        <SkillTestHeader />
-        <QuickStatistics />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <>
+      <h1 className="mt-5 text-base  text-wider m-10">Skill Test</h1>
+      <div className="flex items-center flex-col lg:flex-row justify-evenly h-full w-full mt-5">
+        <div className="flex-col justify-evenly h-full w-3/4 lg:w-5/12 gap-5">
+          <SkillTestHeader />
+          <QuickStatistics />
           <ComparisonGraph />
-          <SyllabusAnalysis />
         </div>
-        <QuestionAnalysis />
+        <div className="flex-col justify-evenly h-full w-3/4 lg:w-5/12">
+          <SyllabusAnalysis />
+          <QuestionAnalysis />
+        </div>
       </div>
-      
-    </div>
+    </>
   );
 }
 

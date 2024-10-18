@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const scoreSlice = createSlice({
   name: 'score',
   initialState: {
-    score: 0,
-    totalQuestions: 0,
-    rank: null,
-    percentile: null,
+    score: 10,
+    totalQuestions: 15,
+    rank: 5,
+    percentile: 30,
   },
   reducers: {
     setScore: (state, action) => {

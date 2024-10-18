@@ -5,16 +5,16 @@ import { TiDocument } from "react-icons/ti";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const NAV_ITEMS = [
-  { name: "Dashboard", slug: "/", icon: BsTextParagraph, color: "text-nav-white" },
-  { name: "Skill Test", slug: "/skill-test", icon: SlBadge, color: "text-nav-white" },
-  { name: "Internship", slug: "/internship", icon: TiDocument, color: "text-nav-white" },
+  { name: "Dashboard", slug: "/", icon: BsTextParagraph, color: "text-black " },
+  { name: "Skill Test", slug: "/skill-test", icon: SlBadge, color: "text-black" },
+  { name: "Internship", slug: "/internship", icon: TiDocument, color: "text-black" },
 ];
 
 const NavItem = React.memo(({ item, isActive, onClick }) => (
   <li
-    className={`flex items-center m-1 text-base font-medium cursor-pointer p-2 hover:text-nav-active hover:font-bold ${
-      isActive ? "text-nav-active" : item.color
-    } text-slate-50`}
+    className={`flex gap-4 items-center text-lg font-medium cursor-pointer pl-5 pt-4 pb-4 hover:text-violet-400 hover:font-bold ${
+      isActive ? "text-violet-600 bg-violet-100 rounded-lg rounded-r-3xl" : item.color
+    } text-gray-600`}
     onClick={onClick}
     aria-current={isActive ? "page" : undefined}
   >
@@ -28,13 +28,13 @@ const Sidebar = () => {
   const location = useLocation();
   
   return (
-    <div className="h-full pt-5 p-4 flex flex-col bg-nav-color">
-      <div className="mt-8 flex flex-col justify-evenly self-center text-center gap-2">
-        <h1 className="text-text-green mt-2 text-4xl md:text-3xl sm:text-2xl font-bold tracking-widest">
+    <div className="h-full pt-5 p-4 pl-0 flex flex-col border border-r-violet-100">
+      <div className="mt-5 mb-10 self-center text-center">
+        <h1 className="text-black  text-4xl md:text-3xl sm:text-2xl font-bold tracking-wide">
           WhatBytes
         </h1>
       </div>
-      <ul className="mt-8 p-4">
+      <ul className="mt-8">
         {NAV_ITEMS.map((item) => {
           const isActive = location.pathname === item.slug;
           

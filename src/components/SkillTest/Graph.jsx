@@ -1,20 +1,24 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { useSelector } from 'react-redux';
 
 const QuestionAnalysis = () => {
-  // Example data for the chart
+
+  const scored = useSelector((state) => state.score.score);
+  const percentile = useSelector((state) => state.score.percentile);
   const data = [
     { percentile: 10, score: 20 },
     { percentile: 25, score: 50 },
     { percentile: 50, score: 72 },
     { percentile: 75, score: 90 },
     { percentile: 90, score: 100 },
+    { percentile: {percentile}, score: scored },
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 mb-6">
-      <h3 className="text-xl font-bold mb-4">Question Analysis</h3>
-      <p className="mb-4">You scored 10 correct out of 15 questions.</p>
+    <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-6">
+      <h3 className="text-xl font-bold mb-4">Comparison Graph</h3>
+      <p className="mb-4">You scored {scored} correct out of 15 questions.</p>
       
       {/* Line chart rendering */}
       <div className="h-64">

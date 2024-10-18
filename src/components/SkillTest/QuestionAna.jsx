@@ -1,30 +1,29 @@
 import React from 'react';
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import { useSelector } from 'react-redux';
 
 const QuestionAnalysis = () => {
-  // Total number of questions
   const totalQuestions = 15;
 
-  // Data for correct and incorrect answers
+  const scored = useSelector((state) => state.score.score);
+
   const data = [
     {
       name: 'Correct',
-      value: 10, // Number of correct answers
-      fill: '#4caf50', // Green color for correct answers
+      value: scored, 
+      fill: '#4caf50',
     },
     {
       name: 'Incorrect',
-      value: 5, // Number of incorrect answers (totalQuestions - correct = 5)
-      fill: '#f44336', // Red color for incorrect answers
+      value: 15-scored, 
+      fill: '#f44336',
     },
   ];
 
   return (
-    <div className="bg-white rounded-lg shadow p-6 mb-6">
+    <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 mb-6">
       <h3 className="text-xl font-bold mb-4">Question Analysis</h3>
-      <p className="mb-4">You scored 10 correct out of 15 questions.</p>
-
-      {/* Radial Bar Chart rendering */}
+      <p className="mb-4 font-bold">You scored {scored} questions correct out of 15 questions.</p>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <RadialBarChart
@@ -35,20 +34,20 @@ const QuestionAnalysis = () => {
             barSize={20}
             data={data}
             startAngle={90}
-            endAngle={-270} // Makes the chart a full circle
+            endAngle={-270} 
           >
-            {/* Polar Angle Axis is for controlling the angle of the bars */}
+            
             <PolarAngleAxis
               type="number"
-              domain={[0, totalQuestions]} // Domain is set from 0 to total number of questions
+              domain={[0, totalQuestions]} 
               angleAxisId={0}
-              tick={false} // No need for ticks in this radial chart
+              tick={false}
             />
             <RadialBar
               minAngle={15}
               clockWise
               dataKey="value"
-              cornerRadius={10} // Adds rounded edges to the bars
+              cornerRadius={10}
             />
           </RadialBarChart>
         </ResponsiveContainer>

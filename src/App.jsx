@@ -16,22 +16,19 @@ function App() {
 
   return (
     <div className="flex h-screen w-full">
-      {/* Sidebar visible on larger screens */}
       <div className="w-1/6 md:w-1/5 sm:w-1/4 h-full hidden lg:block">
         <Sidebar />
       </div>
 
-      {/* Sidebar for mobile with transition */}
       <div className={`lg:hidden transition-all duration-300 ${isSidebarOpen ? "block" : "hidden"}`}>
         <HeaderSidebar />
       </div>
 
-      {/* Main content area */}
-      <div className="flex flex-col bg-back-color w-full h-full flex-grow overflow-y-auto">
+      <div className="flex flex-col  w-full h-full flex-grow overflow-y-auto">
         <Header />
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center"> */}
           <Outlet />
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

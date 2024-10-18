@@ -20,26 +20,22 @@ function Header() {
       .join(" ");
 
   return (
-    <div className="flex w-full justify-between mt-4 p-4 items-center">
-      {/* Hamburger menu only visible on smaller screens */}
+    <div className="flex w-full justify-between mt-2 p-4 items-center border-b border-b-violet-100 ">
       <div className="text-4xl lg:hidden cursor-pointer">
         <RxHamburgerMenu
           onClick={togglebar}
-          aria-label={isSidebarOpen ? "Close Sidebar" : "Open Sidebar"} // Accessibility
+          aria-label={isSidebarOpen ? "Close Sidebar" : "Open Sidebar"} 
         />
       </div>
 
-      {/* Add space between menu and profile on large screens */}
       <div className="flex-grow"></div>
 
-      {/* User profile with logo and text to the right */}
       <div className="flex items-center space-x-3 cursor-pointer hover:scale-105 transition-all duration-300">
         
-        {/* User profile */}
-        <div className="flex flex-col items-center border-2 rounded-3xl p-2 mr-3" >
-          <Link to="/user" className="flex  items-center">
+        <div className="flex flex-col items-center border-2 border-l-violet-200 rounded-lg p-2 mr-3" >
+          <Link to="/" className="flex items-center gap-2">
             <img width="48" height="48" src={Man} alt="user" />
-            <p className="text-sm mr-2">{capitalizeName("kunal singla")}</p>
+            <p className="text-sm font-bold mr-2">{capitalizeName("kunal singla")}</p>
           </Link>
         </div>
       </div>

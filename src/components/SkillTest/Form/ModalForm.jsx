@@ -10,6 +10,8 @@ const ModalForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!rank || !percentile || !numberOfQuestions) return;
+    if(isNaN(rank) || isNaN(percentile) || isNaN(numberOfQuestions)) return;
     dispatch(setRank(rank));
     dispatch(setPercentile(percentile));
     dispatch(setScore(numberOfQuestions));
@@ -38,7 +40,7 @@ const ModalForm = ({ isOpen, onClose }) => {
             <span className="mr-2 bg-blue-600 px-3 py-2 text-nav-white rounded-full font-bold">1</span>
             <label className="block mb-2 flex-1" htmlFor="rank">Update your <strong>Rank</strong>:</label>
             <input
-              type="text"
+              type="number"
               id="rank"
               value={rank}
               onChange={(e) => setRankValue(e.target.value)}
@@ -50,7 +52,7 @@ const ModalForm = ({ isOpen, onClose }) => {
             <span className="mr-2 bg-blue-600 px-3 py-2 text-nav-white rounded-full font-bold">2</span>
             <label className="block mb-2 flex-1" htmlFor="percentile">Update your <strong>Percentile</strong>:</label>
             <input
-              type="text"
+              type="number"
               id="percentile"
               value={percentile}
               onChange={(e) => setPercentileValue(e.target.value)}
