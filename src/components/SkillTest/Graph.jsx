@@ -7,11 +7,11 @@ const QuestionAnalysis = () => {
   const scored = useSelector((state) => state.score.score);
   const percentile = useSelector((state) => state.score.percentile);
   const data = [
-    { percentile: 10, score: 20 },
-    { percentile: 25, score: 50 },
-    { percentile: 50, score: 72 },
-    { percentile: 75, score: 90 },
-    { percentile: 90, score: 100 },
+    { percentile: 10, score: 5 },
+    { percentile: 25, score: 6 },
+    { percentile: 50, score: 7 },
+    { percentile: 75, score: 9 },
+    { percentile: 90, score: 10 },
     { percentile: {percentile}, score: scored },
   ];
 
