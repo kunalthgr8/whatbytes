@@ -12,6 +12,7 @@ const ModalForm = ({ isOpen, onClose }) => {
     e.preventDefault();
     if(!rank || !percentile || !numberOfQuestions) return;
     if(isNaN(rank) || isNaN(percentile) || isNaN(numberOfQuestions)) return;
+    if(rank < 0 || percentile < 0 || percentile > 100 || numberOfQuestions < 0 || numberOfQuestions > 15) return;
     dispatch(setRank(rank));
     dispatch(setPercentile(percentile));
     dispatch(setScore(numberOfQuestions));
