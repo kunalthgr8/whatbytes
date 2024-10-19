@@ -29,7 +29,7 @@ const ModalForm = ({ isOpen, onClose }) => {
       onClick={onClose} 
     >
       <div 
-        className="bg-white w-2/5 rounded-lg p-6 relative shadow-lg" 
+        className="bg-white w-full sm:w-4/5 lg:w-2/5 rounded-lg p-6 relative shadow-lg" 
         onClick={(e) => e.stopPropagation()} 
       >
         <h2 className="text-lg font-bold m-4 mt-0">Update Scores</h2>

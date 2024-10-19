@@ -9,7 +9,7 @@ const SkillTestHeader = () => {
   }, []);
 
   return (
-    <div className="bg-white border border-gray-200 flex gap-5 rounded-lg shadow-lg p-6 mb-5">
+    <div className="bg-white border border-gray-200 flex flex-col sm:flex-row gap-5 rounded-lg shadow-lg p-6 mb-5">
       {/* Title and Description */}
       <div className="self-center ">
         <img
